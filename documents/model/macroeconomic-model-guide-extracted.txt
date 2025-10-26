@@ -1,0 +1,3701 @@
+Supervisory Stress Test Documentation
+Macroeconomic Model Guide
+October 2025
+This document
+provides details on 
+the
+macroeconomic
+model that the Federal Reserve 
+Board of Governors (Board) intends to use in the 2026 Supervisory Stress Test.
+Documentation 
+on the other models that the Board intends to use in the 2026 Supervisory Stress Test is available 
+at the following link: 
+https://www.federalreserve.gov/supervisionreg/dfa
+-
+stress
+-
+tests
+-
+2026.htm
+Table 
+of Contents
+A.
+Macro Model for Stress Testing
+................................
+................................
+................................
+...
+4
+B.
+Unemployment Rate
+................................
+................................
+................................
+......................
+8
+C.
+Real Gross Domestic Product
+................................
+................................
+................................
+.....
+13
+D.
+Prices: PCE, CPI and GDP deflators
+................................
+................................
+.........................
+22
+E.
+Nominal and Real Disposable Income
+................................
+................................
+........................
+31
+F.
+Monetary Policy (Fed Funds Rate) and the 3
+-
+month Treasury Bill Rate
+...............................
+34
+G.
+Long
+-
+term Interest Rates
+................................
+................................
+................................
+............
+36
+H.
+Term Premiums
+................................
+................................
+................................
+...........................
+37
+I.
+Model Variables with Complete and Explicit Guides
+................................
+...............................
+42
+i.
+BBB Spread
+................................
+................................
+................................
+...............................
+42
+ii.
+House Price
+................................
+................................
+................................
+................................
+43
+iii.
+Equity Price
+................................
+................................
+................................
+...............................
+44
+iv.
+VIX
+................................
+................................
+................................
+................................
+............
+45
+v.
+Mortgage Rate
+................................
+................................
+................................
+...........................
+45
+vi.
+Commercial Real Estate Price
+................................
+................................
+................................
+...
+46
+vii.
+Prime Rate
+................................
+................................
+................................
+.............................
+47
+J.
+The Identities of the Macro Model for Stress Testing
+................................
+..............................
+48
+K.
+Exogenous Variables
+................................
+................................
+................................
+....................
+49
+L.
+List of variables and mnemonics
+................................
+................................
+................................
+51
+Appendix A.  Level vs Growth Okuns Law specification
+................................
+................................
+.
+53
+Appendix B. Calibration of the long
+-
+range value of the 5
+-
+year Treasury yield
+..............................
+55
+4
+Model 
+Documentation: 
+Macro Model for Stress Testing
+A.
+Macro Model for Stress Testing
+Central banks use a large and diverse set of models to simulate the economy and analyze 
+economic and policy issues for a variety of purposes. 
+These models differ along many 
+dimensions, including size, economic structure and estimation or calibration approaches. 
+There 
+is no ideal model, and good practice 
+is to 
+choos
+e
+a model that best suits the intended purposes 
+and the roles it is meant to play.
+1
+The macroeconomic model discussed in this document, the 
+Macro Model
+for Stress 
+Testing
+, was developed exclusively to assist the Board in making the annual stress test scenario 
+development process more transparent and predictable, while maintaining an appropriate level of 
+severity in the severely adverse scenario. 
+The model plays several roles in the stress testing 
+process. 
+First, the model provides the trajectories of the stress test scenarios for a handful of 
+macroeconomic variables
+, including 
+real and nominal 
+gross domestic product (
+GDP
+)
+, inflation 
+rates, real and nominal disposable income, and short
+-
+and long
+-
+term interest rates.  Rather than 
+being specified with guides, the paths of these variables in the severely adverse scenarios are 
+primarily determined by the equations of the 
+M
+acro 
+M
+odel for Stress Testing
+, taking as inputs 
+the constraints provided by the other variab
+les guides
+
+most importantly, the path of the 
+unemployment rate.  Moreover, the 
+Macro Model 
+for Stress Testing
+is used to generate paths for 
+all variables beyond the 13 quarters covered by the guides.
+Second, the model provides a structure used to generate a baseline projection for the 
+variables of interest, based, in part, on forecasts from the Blue Chip Economic Indicators and 
+1
+See the speech delivered by David Stockton What Makes a Good Model for the Central Bank to Use? at the 
+Federal Reserve Bank of San Francisco in 2002 and available at 
+https://www.frbsf.org/wp
+-
+content/uploads/panel_remarks.pdf
+.
+5
+Model Documentation: 
+Macro Model for Stress Testing
+Financial Forecasts surveys and economic projections from the Congressional Budget Office
+(CBO)
+. 
+The baseline projections of many variables are set to match the forecasts from 
+external sources for the first 6 or 7 years of the projection period. 
+The 
+Macro Model 
+for Stress 
+Testing
+is then used to produce a baseline trajectory for these variables beyond that horizon. 
+In 
+addition, the equations of the 
+M
+acro 
+M
+odel for Stress Testing
+are used to generate baseline paths 
+for the variables for which reliable e
+xternal sources of information are not available.
+Larger
+-
+scale models used in policy institutions, like FRB/US and ECB
+-
+BASE, provide a 
+broader and more detailed perspective on the economy and a tighter link to economic theory than 
+the small model described here.
+2
+However, because of their broad scope and high level of detail, 
+simulations with these models necessarily reflect the complex interaction of a wide range of 
+assumptions, many of which are only tangentially related to 
+the 
+main concerns of scenario design 
+for the supervisory stress test.  Recognizing the high importance of simplicity and transparency 
+in the scenario design process, in developing the 
+Macro Model
+for Stress Testing
+, the Board has 
+focused on robust empirical regularities relating to the relatively small number of variables 
+relevant for the supervisory stress test.
+3
+Moreover, reflecting the principle of conservatism, the 
+Macro Model 
+for Stress Testing
+is specifically designed to reflect the adverse conditions that 
+have characterized post
+-
+war U.S. recessions rather than provid
+e
+a completely general model of 
+the economy under all conditions; some modeling choices will reflect the objective of capturing 
+2
+Information and documentation about the FRB/US model can be found at: 
+https://www.federalreserve.gov/econres/us
+-
+models
+-
+about.htm
+. 
+ECB
+-
+Base is a model developed by the European 
+Central Ban
+k
+. 
+F
+or more information
+, see
+Angelini, E., & Bokan, N., & Christoffel, K., & Ciccarelli, M., & Zimic, 
+S., 2019.  Introducing ECB
+-
+BASE: The blueprint of the new ECB semi
+-
+structural model for the euro area, 
+Working Paper Series 2315, European Central Bank.
+3
+Simplicity as favoring those modeling approaches that allow for a more straightforward interpretation of the 
+drivers of model results and that minimize operational challenges for model implementation. 84 FR 6668 (February 
+28, 2019) 
+https://www.federalregister.gov/documents/2019/02/28/2019
+-
+03503/stress
+-
+testing
+-
+policy
+-
+statement
+6
+Model Documentation: 
+Macro Model for Stress Testing
+such dynamics.
+4
+In addition, the model parameters are either estimated from public data or 
+calibrated using publicly available estimates of those parameters, from third
+-
+party sources 
+whenever possible. 
+Consequently, neither the equations nor the results of the 
+Macro 
+M
+odel for 
+Stress Testing
+should be viewed as necessarily representative of the economic or financial 
+market forecasts or scenario analysis used in other contexts by the 
+Federal Open Market 
+Committee (
+FOMC
+)
+, the Board, its staff, or anyone else associated with the Federal Reserve 
+System.  
+Many models in both the academic literature and at central banks aim to provide a 
+structural account of the economy
+;
+that is, a model built on explicit models of the optimal 
+choices of households and firms, including their expectations of future conditions, and a general 
+equilibrium framework, in which prices and quantities are jointly determined in order to equate 
+supp
+ly and demand.  Scenario design for the supervisory stress test does not require a structural 
+model in this sense and, as previously indic
+ated, the 
+Macro 
+M
+odel for Stress Testing
+is instead 
+built on simple and robust time
+-
+series relations directly relating the relevant set of scenario 
+variables.  However, in line with some theoretical asset pricing models, the Board recognizes the 
+importance of expectations in the transmission of 
+monetary policy and for that reason, the long
+-
+term interest rates in the model are consistent with the future expected values of the policy rates. 
+In particular, model
+-
+consistent expectations are used for the simula
+tion of the 5
+-
+and 10
+-
+year 
+Treasury yields. 
+While the 
+Macro Model
+for Stress Testing
+does not feature general equilibrium 
+4
+In the 2019 Stress Testing Policy Statement, the Board defined conservatism as given a reasonable set of 
+assumptions or approaches, to use those that result in relatively more significant losses or lower revenue, all other 
+things being equal. 84 FR 6668
+(February 28, 2019) 
+https://www.federalregister.gov/documents/2019/02/28/2019
+-
+03503/stress
+-
+testing
+-
+policy
+-
+statement
+7
+Model Documentation: 
+Macro Model for Stress Testing
+interactions, the scenario guides have been designed so that the co
+-
+movements of the variables 
+are roughly consistent with the empirical evidence.
+Overall, the Board proposes a simple macroeconomic model of the economy to support 
+the implementation of the 
+Policy Statement on the Scenario Design Framework for Stress 
+Testing
+5
+and facilitate the communication of the models structure and the results of the 
+simulations.
+This document outlines and provides details about the equations of the proposed 
+Macro Model for 
+Stress Testing
+for the Boards stress testing program. 
+5
+See 
+12 C
+.
+F
+.
+R
+.
+pt. 
+252
+, 
+appendix A
+.
+8
+Model Documentation: 
+Unemployment Rate
+B.
+Unemployment 
+R
+ate
+The Board specifies the underlying dynamics of the unemployment rate, 
+, by 
+assuming that its deviation from the estimated natural rate of unemployment, 
+, follows 
+an autoregressive representation of order 2, that is
+,
+a time series process 
+in 
+which
+its
+current 
+value is a linear function of its own observations in the previous two periods (e.g.
+,
+quarters) plus 
+a white noise process.
+6
+The second
+-
+order autoregressive structure is a flexible and simple 
+approach to represent cyclical dynamics in macroeconomics contexts.
+7
+The equation is 
+estimated using the CBO estimates of the natural rate of unemployment with a sample starting in 
+1967 and ending in 2019.
+8
+The resulting estimated equation is
+:
+Equation B1
+
+Unemployment rate
+(
+)
+(
+)
+=
+1
+.
+65
+(
+1
+)
+(
+1
+)
+0
+.
+68
+(
+2
+)
+(
+2
+)
++
+(
+)
+.
+The guide on the unemployment rate provides information about the trajectories to the 
+peak and its decline to an end value after the peak is reached. 
+As such, the dynamics of 
+E
+quation 
+B
+1
+do not play any role in the determination of the unemployment rate path over the first 13 
+quarters of the simulation. 
+However, as explained in detail in the later section Long
+-
+term 
+I
+nterest 
+R
+ates, the trajectory of the interest rates over the first 13 quarters depends, through the 
+policy rule, on those of real GDP and core PCE inflation beyond the first 13 quarters. 
+As the 
+6
+A white noise process is a sequence of random variables that are independently distributed and have a constant 
+mean and variance over time.
+7
+See
+Harvey, A. C.
+, 
+1985. 
+
+Trends and Cycles in Macroeconomic Time Series.
+
+Journal of Business & Economic 
+Statistics, 3(3), 216
+
+227.  and Hamilton, J. D.
+, 
+1994. Time Series Analysis. Princeton University Press.
+8
+S
+ee
+Brauer, D
+.
+, 
+2007
+.
+
+The Natural Rate of Unemployment: Working Paper 2007
+-
+06
+,
+
+Working Papers 18566, 
+Congressional Budget Office, and Shackleton, 
+R.
+, 
+2018
+.
+
+Estimating and Projecting Potential Output Using CBO's 
+Forecasting Growth Model: Working Paper 2018
+-
+03
+,
+
+Working Papers 53558, Congressional Budget Office. 
+The 
+vintage of the CBO historical Data and Economic Projections used to estimate the current version of the equation is 
+January 2025.  
+9
+Model Documentation: 
+Unemployment Rate
+paths of real GDP and inflation are primarily determined by that of the unemployment rate, what 
+happens to the unemployment rate beyond the first 13 quarters of the simulation still affects the 
+trajectories of the 5
+-
+and 10
+-
+year Treasury yields over the re
+ported period of the stress test 
+scenario. 
+Hence, the model must feature an equation for the unemployment rate, although the 
+unemployment rate guide
+determines the first 13 quarters that are directly relevant in estimating 
+revenues, expenses, and credit l
+osses in the annual stress test.
+The re
+mainder
+of this section will show that 
+E
+quation 
+B
+1 provides a reasonable 
+prescription for the decline in the unemployment rate once it reaches its peak and hence provides 
+an adequate characterization of the unemployment rate beyond the stress test scenario horizon.  
+10
+Model Documentation: 
+Unemployment Rate
+Figure B1
+
+Dynamic 
+c
+ounterfactual: 
+u
+nemployment 
+r
+ate 
+e
+quation
+Figure 
+B1
+shows the predictions of the estimated equation using a dynamic simulation 
+that jumps off from the peak in the unemployment rate for each recession; the equation is 
+simulated over a period of several years. 
+The panels reveal that the equation under
+-
+predicts the 
+11
+Model Documentation: 
+Unemployment Rate
+pace of the decline for most recessions except for the 2007
+-
+2009 financial crisis, for which the 
+simulated path is slightly lower than the actual data. 
+Figure B2
+shows that the decline in the 
+unemployment rate following the 2007
+-
+2009 financial crisis
+has two phases where the fall was 
+initially very slow but then picked up in speed.
+9
+The period corresponding to the initial phase is, 
+however, in part covered by the guide and the equation is only used beyond that period. 
+As 
+shown in
+Figure B2
+,
+if the dynamic simulation starts 13 quarters after the onset of the recession, 
+taking the realization of the unemployment rate for that period as given, the equation performs 
+much better at replicating the pace of the decline while preserving its ability 
+to reproduce the 
+timing of the unemployment rates slowdown as it approaches the estimate of the natural rate of 
+unemployment. 
+In particular, relying on the guide and then the equation allows the model to 
+capture the possibility of 
+both a steep and severe increase in the unemployment rate and a very 
+protracted recovery
+
+both important features for the scenario design process, given the high 
+salience of the 2007
+-
+2009 financial crisis episode to the scenario narrative underlying the 
+sev
+erely adverse scenario in the annual stress test. 
+It would likely be difficult to substantially 
+improve on this equation while remaining in the class of linear model. 
+Additionally, based on 
+the evidence of the dynamic simulations over the 2007
+-
+2009 finan
+cial crisis, augmenting the 
+equation with non
+-
+linear features would deliver 
+only 
+marginal improvements in fit at the cost of 
+more complex and potentially fragile model dynamics. 
+Indeed, the results depicted in 
+Figure B2
+shows that the equation predicts declines in the unemployment rate after 2010
+.The predicted
+levels are very close to the data in the first year of the simulation as well as the later years
+,
+as the 
+series approaches the estimate of the natural rate.
+9
+The two thin lines in figure B2 illustrate 
+visually
+the change in the speed at which the unemployment rate declined 
+following the series reaching a peak in the wake of the 2007
+-
+2009 financial crisis. 
+The two lines are produced by 
+fitting estimated linear models with an intercept and a time trend as regressors for the periods of 2009Q2
+-
+2013Q2 
+and 2013Q2
+-
+2015Q3, respectively.  
+12
+Model Documentation: 
+Unemployment Rate
+Figure B2
+
+Unemployment during the 2007
+-
+2009 financial crisis and simulated trajectories
+13
+Model Documentation: 
+Real Gross Domestic Product
+C.
+Real Gross Domestic Product
+The Board determines real gross domestic product (GDP) using a version of Okuns Law, 
+specified in growth rates: 
+Equation C1
+
+Real Gross Domestic Product
+(
+)
+=
+400
+log
+(
+)
+(
+)
+4
+(
+(
+)
+(
+1
+)
+)
+.
+(
+)
+is 
+400
+log
+(
+(
+)
+(
+)
+)
+, 
+is potential GDP and 
+=
+1
+.
+4
+.
+10
+The 
+economic relationship commonly referred to as Okuns Law is a well
+-
+established regularity 
+linking fluctuations in the unemployment rate to those of output.  Since the seminal work of 
+Okun (1962),
+11
+Okuns Law has become a simple rule of thumb used by economic forecasters 
+to relate forecast
+s
+of real GDP to projection
+s
+of the unemployment rate.
+12
+The Board proposes to 
+adopt a growth version of the relationship
+
+in contrast to a level specification
+13
+
+both on the 
+ground that it reduces dependency on unobserved variables, such as the natural rate of 
+unemployment, and because it does a better job 
+accounting for the dynamics of output around 
+the 2007
+-
+2009 financial crisis, given the evolution of the unemployment rate and reasonable 
+assumptions about the intercept term
+. 
+S
+ee Appendix A for a more detailed analysis of this 
+choice. 
+The empirically relevant value of the sensitivity parameter, 
+, will depend on the 
+historical behavior of potential output, which is not directly observed and so must be inferred. 
+10
+The Board
+use
+s
+the CBO estimate of real potential GDP as estimate of the series.  The change in the 
+unemployment rate is multiplied by the factor 4 as the annualized percentage change in GDP is being used.
+11
+Okun, A.
+, 
+1962. Potential GNP Its Measurement and Significance. In Proceedings of the Business and 
+Economics Section (pp. 98
+-
+103).
+12
+McCarthy J., & Potter S. & Ng G. C.
+, 
+2012. 
+Okuns Law and Long Expansions
+.
+
+Liberty Street Economics.  
+13
+The simplest level specification is
+100
+log
+(
+)
+(
+)
+=
+(
+(
+)
+(
+)
+)
+.
+14
+Model Documentation: 
+Real Gross Domestic Product
+The Board has considered two options for the intercept term 
+400
+log
+(
+(
+)
+(
+)
+)
+
+which will 
+be denoted as 
+(
+)
+
+The first option is to assume a constant growth rate
+over the estimation sample, that is, 
+(
+)
+is constant.  The second
+option introduces time
+-
+variation in the intercept, using the 
+CBO estimates of the potential GDP growth, again in the interests of simplicity and 
+transparency. 
+The first two columns of 
+Table C1
+report the results of the regression of the 
+Okuns Law 
+equation 
+over the full sample for the two intercept specifications. 
+Table 
+C
+1
+
+Okun
+s
+Law estimation results
+1967
+-
+2019
+1990
+-
+2019
+Constant
+Growth
+Constant
+Growth
+Intercept Term
+2.76
+-
+2.41
+-
+14
+The 
+Board considered this possibility by running the same regressions over the 1990
+-
+2019 sample. 
+15
+The results of 
+Table C1
+provide a range of estimates that by design reflects an average 
+sensitivity over the different phases of the business cycles. 
+However, in consideration of the 
+14
+See Gordon, R. J.
+, 
+2010. 
+
+Okuns law and productivity innovations.
+
+American Economic Review, 100(2), 11
+
+15; 
+and Meyer, B., & Tasci, M.
+, 
+2012. 
+
+An Unstable Okuns Law, Not the Best Rule of Thumb.
+
+Federal Reserve Bank 
+of Cleveland Economic Commentary, 2012(8), 1
+
+4.
+15
+As again expected from the literature, when estimated, the value of the intercept (the constant growth rate of 
+potential output) is noticeably smaller, reflecting a decline in underlying growth over time.
+15
+Model Documentation: 
+Real Gross Domestic Product
+main objectives of the design process, the equation used in the model should be tailored to 
+perform well under the adverse economic development consistent with the guide on the 
+unemployment rate. 
+To further explore the various specifications under conditions most relevant 
+to the stress test, the performance of several alternative specifications in replicating the dynamics 
+of GDP for the 
+three
+most recent non
+-
+pandemic recessions is investigated through dynamic 
+simulations, jumping off from the quarter prior
+to 
+the
+official marking
+of
+the beginning of the 
+recession. 
+Figure C1
+shows the dynamic simulations when the intercept is set to the estimated 
+value of the intercept over the sample 1990
+-
+2019, that is, 2.41 percent, and
+Figure C2
+presents 
+the results of simulations when the CBO estimate of potential output is used to construct the 
+intercept term. 
+The results of the simulations show that there is no configuration of parameters 
+and specifications that dominate or perform consistently better across recession
+s.
+16
+Model Documentation: 
+Real Gross Domestic Product
+Figure C1
+
+GDP dynamic counterfactuals: constant intercept
+17
+Model Documentation: 
+Real Gross Domestic Product
+Figure C2
+
+GDP dynamic counterfactuals
+:
+potential growth intercept
+Considering the scenario design processs emphasis on simulating adverse economic 
+conditions that resemble those observed during 
+the 
+2007
+-
+2009 financial crisis, the comparison of 
+the bottom panels of both figures suggests that relying on an overall sample average as intercept 
+18
+Model Documentation: 
+Real Gross Domestic Product
+rather than using estimates that more closely track and reflect the conditions of the actual 
+economy at the time impairs the ability of the equation to account for the dynamics of GDP 
+during the recession. 
+Overall, on the basis of the evidence shown in 
+Figures
+C
+1 and 
+C
+2, the 
+version of the rule with a coefficient of 1.4 and an intercept that reflect
+s
+the economic conditions 
+at the time (which is based on the CBO estimate of the output growth) performs satisfactorily at 
+capturing the depth of the decline in
+output (in level terms) as well as the growth contour 
+observed during that episode for GDP. 
+More generally, economic research shows that recessions 
+that are triggered by financial crises tend to be deeper and have slower recoveries than other 
+recessions.
+16
+On these grounds, this specification would be a reasonable and valid choice. 
+The comparison of the panels of 
+Figures
+C
+1 and 
+C
+2 also reveals that the elasticity 
+parameter alone does not identify the response of GDP by itself but does so in conjunction with 
+the assumptions about the intercept term. 
+This interaction matters especially if the intercept 
+varies over time. 
+For instance, given a fixed sensitivity coefficient, running the specification of 
+Okuns law with an intercept that over
+-
+estimates the growth of potential GDP will understate the 
+damage to output. 
+As the bottom panels of 
+Figure C1
+suggest, an intercept that imputes
+some of 
+the stronger underlying growth from the 
+19
+90s
+
+as a constant intercept would imply
+
+over the 
+2007
+-
+2009 financial crisis period implies output growth that is too strong relative to the assumed 
+unemployment rate gap.
+17
+Consequently, the equation will fail to achieve the depth of the 
+observed decline in output for that period, even for the largest values of the elasticity parameter 
+16
+See, for instance, Reinhart, C. M., and Rogoff, K. S.
+, 
+2009. The Aftermath of Financial Crises. American 
+Economic Review 99 (2): 466
+
+72; and Jordà, Ò., Schularick, M., & Taylor, A. M.
+, 
+2013. 
+
+When credit bites back.
+
+Journal of 
+M
+oney, 
+C
+redit and 
+B
+anking, 45(s2), 3
+-
+28.
+17
+For discussions and evidence about the evolution and decline in the trend or average GDP growth over time 
+see
+Fernald J. G.
+, 
+2015. Productivity and Potential Output before, during, and after the Great Recession, NBER 
+Macroeconomics Annual, University of Chicago Press, vol. 29(1), pages 1
+-
+51.
+; and Stock J. H. & Watson M. W.
+,
+2012. 
+
+Disentangling the Channels of the 2007
+-
+2009 Recession,
+
+NBER Working Papers 18094, National Bureau of 
+Economic Research, Inc.
+19
+Model Documentation: 
+Real Gross Domestic Product
+considered here. 
+The bottom panels of
+Figure C2
+indicate that with an estimate of underlying 
+growth that is more likely to be in line with that period, the same elasticity parameters can more 
+than account for the downturn in output.  
+In short, the outcome of the simulation of GDP through a growth Okuns law rule also 
+depends on the value of the intercept. 
+Everything else equal, higher (
+lower
+) values for the 
+intercept will correspond to smaller (larger) declines in output for positive changes in the 
+unemployment rate.
+18
+The baseline path of potential GDP growth is based on the information 
+from both the 
+Historical Data and Economic Projections from
+the CBO and the Blue Chip 
+Economic Indicators survey. 
+This approach provides us with estimates that are up to date with 
+the current and expected economic conditions, which the Board has shown is important to infer 
+the response of real GDP to changes in the unemployment rate. 
+One last exercise is to compare the prediction of the selected Okuns Law rule with the 
+scenario paths featured in the 2025 severely adverse scenario
+. 
+Figure C3
+shows the projection of 
+the output gap implied by 
+E
+quation 
+C1
+of the 
+Macro
+M
+odel
+for Stress Testing
+given the guidance 
+on the unemployment rate and compares it to the corresponding outcomes in the 2025 severely 
+adverse scenario. 
+Figure C4
+shows the same developments but in terms of level relative to that 
+of GDP at the start of each simulation.
+Table C2
+indicates that these results are also in line with the magnitude of the effects on 
+output observed during the 2007
+-
+2009 financial crisis. 
+It is important to note that the changes in 
+the unemployment rate implied by the guidance and 
+used
+in the 2025 stress test
+severely adverse
+scenario are somewhat larger than those observed during the 2007
+-
+2009 financial crisis. 
+This 
+18
+In the discussion of this section, an increase in the unemployment rate, in conformity with the guidance, is treated 
+as the default case being discussed, hence characterizing the changes in output as being negative only. 
+20
+Model Documentation: 
+Real Gross Domestic Product
+result occurs because the current unemployment rate is lower than it was at the beginning of that 
+recession, which means that the 2025 scenario has a larger increase in unemployment than 
+occurred during the 2007
+-
+2009 financial crisis. 
+Table 
+C2
+
+Magnitude of the decline in real GDP from peak to trough across 
+r
+ecessions
+Recession
+Pre
+-
+recession 
+max
+Recession 
+min
+Percentage 
+Change
+Trough 
+Date
+Trough 
+Quarter
+1957
+-
+58
+3237.4
+3120.7
+-
+3.60
+1958Q1
+3
+1973
+-
+75
+6150.10
+5957.00
+-
+3.14
+1975Q1
+6
+1981
+-
+82
+7492.40
+7295.60
+-
+2.63
+1982Q1
+3
+1990
+-
+91
+10090.60
+9951.90
+-
+1.37
+1991Q1
+3
+2001
+14271.70
+14183.10
+-
+0.62
+2001Q1
+1
+2007
+-
+09
+16943.30
+16269.10
+-
+3.98
+2009Q2
+7
+Figure C3
+
+Output gap
+21
+Model Documentation: 
+Real Gross Domestic Product
+Figure C4
+
+R
+eal GDP
+22
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+D.
+Prices: PCE, CPI and GDP deflators
+The 
+Macro Model 
+for Stress Testing
+specifies four measures of inflation
+,
+although 
+ultimately their dynamics are primarily determined by a single one. 
+While headline CPI inflation 
+is the scenarios focal inflation variable, the behavior of the different inflation series, including 
+CPI, is driven by that of core PCE inflation (
+).
+19
+The latter concept is the key inflation 
+factor that drives all of the other inflation rates in the model
+,
+as it excludes volatile components 
+of PCE and CPI inflation and hence is more predictable and easier to model. 
+Core PCE inflation 
+also plays a key role in determining interest rates
+,
+as that measure of inflation enters the models 
+policy rule and, hence, directly determines the evolution of the models interest rates. 
+Beside
+s
+headline CPI inflation, the 
+Macro Model 
+for Stress Testing
+also calculate
+s
+inflation rates 
+corresponding to the headline PCE deflator, which is in the model to deflate nominal disposable 
+income, and the GDP deflator, which 
+is 
+used to calculate nominal GDP from real GDP. 
+The 
+model equation for core PCE inflation is:
+Equation D1
+
+Core PCE inflation
+(
+)
+=
+0
+.
+36
+(
+1
+)
++
+0
+.
+23
+(
+2
+)
++
+0
+.
+41
+(
+)
++
+0
+.
+08
+(
+(
+)
+(
+1
+)
+)
++
+(
+)
+The specification of this equation
+, along with its estimated parameters
+,
+is described in the 
+2015 speech Inflation Dynamics and Monetary Policy by Janet Yellen.
+20
+The equation 
+originally proposed was estimated with an additional term meant to control for the effect of 
+19
+If 
+is the core PCE price level then 
+(
+)
+=
+400
+log
+(
+(
+)
+(
+)
+)
+. 
+The same convention applies to 
+the other inflation series, 
+/
+, 
+/
+,
+and
+/
+. 
+20
+The speech is available at this link: 
+https://www.federalreserve.gov/newsevents/speech/yellen20150924a.htm
+23
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+changes in the relative price of core imported goods.  This series is absent from the Boards suite 
+of scenario variables and therefore is absent from the 
+Macro Model
+for Stress Testing
+, making it 
+irrelevant for the simulation; as a result, it is omitted.  As also further described in the speech, 
+is the measure of long
+-
+run inflation expectations from the Survey of Professional 
+Forecasters.
+21
+For 
+the
+Policy Statement on the Scenario Design for Stress Testing,
+22
+the Board 
+assumes that long
+-
+run inflation expectations remain anchored at the FOMCs longer
+-
+run goal of 
+2 percent.
+23
+To assess the performance of this equation, dynamic simulations are produced over past 
+recessions to assess how well the equation tracks the actual evolution of inflation during these 
+periods.
+24
+Figure D1
+shows the results of these simulations.  The equation underpredicts the 
+declines in inflation seen during the early 1990s and 2000s recessions.  Understandably, it also 
+has difficulty capturing the volatility in inflation 
+seen 
+during the 2007
+-
+2009 financial crisis
+. 
+In 
+the equation simulation, inflation
+remains at a pace similar to that preceding the recession before 
+dropping sharply at the end of 2008 just to rebound a few quarters later.  While the equation 
+eventually captures the depth of the declines a few years into the 2007
+-
+2009 financial crisis, it
+does so sluggishly.  This pattern and the underprediction by the equation of the 1990s and 2000s 
+21
+Id.
+As detailed in a footnote of the speech, long
+-
+run inflation expectations are proxied by the median forecasts of 
+long
+-
+run PCE or CPI inflation reported in the Survey of Professional Forecasters, with a constant adjustment of 40 
+basis points prior to 2007 t
+o put the CPI forecasts on a PCE basis. (Prior to 1991:Q4, the series is based on the long
+-
+run inflation expectations reported in the Hoey survey.)
+22
+See 
+12 C.F.R. pt. 252, appendix A.
+23
+https://www.federalreserve.gov/monetarypolicy/files/fomc_longerrungoals.pdf
+24
+These simulations are run using the CBO estimates of the natural rate of unemployment (January 2025
+
+vintage) 
+and the estimate of the long
+-
+run inflation expectations from the public release of FRB/US (mnemonic is PTR and 
+June 2025 is the vintage of the public FRB/US release used to retrieve this variable. 
+Two recent papers that use this 
+series are: Chan, J., Clark, T. and Koop, G., 2018
+.
+Inflation Expectations
+.
+ Journal of Money, Credit and Banking, 50, issue 1, p. 5
+-
+53; and Ashley, R. & Verbrugge R., 
+specification
+.
+ Economic Inquiry, Western Economic Association International, vol. 63(3), pages 926
+-
+944, July.  
+24
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+recessions suggest that momentum of other factors, beyond those reflected in the equation, have 
+influenced the evolution of inflation during the past 
+three
+non
+-
+pandemic recessions. 
+Accordingly, the Board augment
+s
+the equation with shocks in the first year of the simulation in 
+order to capture and replicate the contribution of these factors.  The yellow lines in 
+Figure D1
+show the performance of the combination of the rule and the shocks.
+25
+As shown in
+Figure D1
+, 
+the addition of the shocks substantially improves the fit for the 1990s and 2000s recessions.  It 
+also accelerates the decline 
+in
+inflation during the 2007
+-
+2009 financial crisis in a way that is 
+consistent with the data.  
+Figure D2
+shows the proposed equation
+s
+predict
+ion
+of
+inflation given the guidance about 
+the unemployment rate in the 2025 stress test.
+26
+The specification implies that the level of inflation immediately prior to the scenario 
+matters for the inflation path.  However, because the coefficient on lagged inflation is small 
+(0.36), this effect is not very long
+-
+lived, as shown in
+Figure D2
+, which displays the results of 
+simulations for different jump off inflation rates, ranging from 1.0 percent to 6
+.0
+percent.
+27
+As 
+expected, higher initial inflation leads to higher inflation in the simulation, but the effect is 
+relatively modest 
+eight
+quarters into the simulation, even for very high
+initial
+inflation. 
+25
+The shocks are calibrated by minimizing the sum squared errors implied by the equation and shocks over the three 
+recessions relative of the actual data. 
+The shocks are assumed to be the same in each quarter across all recessions, to 
+capture a systematic pattern that is common and robust to the three recessions.  Shocks are introduced only from the 
+second to the fourth quarter of the dynamic simulation peri
+od as the Board prefers to insulate the procedure from the 
+impact of the spike displayed by inflation in the first quarter of 
+two
+of those recessions.
+26
+In this simulation, the natural rate of unemployment is generated in accordance with the set of rules and 
+specifications behind the construction of the baseline, and the long
+-
+run inflation expectations are 
+anchored at the 
+FOMCs longer
+-
+run goal of
+2 percent
+. 
+27
+In the simulations shown in
+Figure D3
+, the natural rate of unemployment is set to 4.1 percent through the 
+simulation and the initial value of the unemployment rate to 4.0 percent.  The trajectory of the unemployment rate 
+during the simulation is consistent with the 2025 stress test guide.
+25
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+Figure D1
+
+Core PCE inflation equation: dynamic counterfactuals
+26
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+Figure D2
+
+Trajectories of core PCE inflation under adversely severe conditions
+Figure
+D3 
+
+Initial conditions and core PCE 
+i
+nflation
+, with 
+representing
+starting inflation
+27
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+The headline PCE inflation process is specified as core PCE inflation plus a term 
+capturing the effects of fluctuations in inflation for food and energy consumption relative to core 
+inflation. 
+The distinction between core and headline inflation is not of central importance to the 
+scenarios and so this term is assumed to follow an autoregressive process of order 1, allowing for 
+some persistence while implying that its contribution will become zer
+o 
+overtime
+in the absence 
+of shock. 
+Headline PCE inflation is
+represented by the pair of equations:
+Equation D2
+
+Headline PCE 
+i
+nflation
+(
+)
+=
+(
+)
++
+(
+)
+,
+Equation D
+3
+
+Headline PCE 
+i
+nflation 
+w
+edge
+(
+)
+=
+(
+1
+)
++
+(
+)
+.
+The process 
+is assumed to be white noise. 
+Technically, the equation is estimated 
+by applying the AR(1) operator 
+(
+1
+)
+to the previous equation, where 
+is the lag operator 
+(i.e.
+, 
+=
+). 
+The resulting equation is
+:
+Equation D
+4
+(
+)
+=
+(
+1
+)
++
+(
+)
+(
+1
+)
++
+(
+)
+.
+The estimation sample is 1990
+-
+2019 and the nonlinear least squared estimate of 
+is 0.36. 
+The estimated equation is therefore:
+Equation D5
+(
+)
+=
+(
+)
++
+(
+)
+,
+where 
+(
+)
+=
+0
+.
+36
+(
+1
+)
++
+(
+)
+.
+The same strategy is employed to link CPI inflation to PCE inflation. 
+An assessment of 
+the equations fit shows that 
+is a much better basis to model CPI inflation than core PCE 
+inflation. 
+This result is expected since the concepts of CPI and headline PCE inflation both 
+28
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+include the contributions from energy and food prices. 
+However, in contrast to the relationship 
+between headline and core PCE inflation, it is well
+-
+known that CPI inflation shows a consistent 
+upward bias relative to PCE inflation. 
+As a result, a constant is included in the equation and its 
+regression. 
+CPI inflation is represented in the 
+Macro Model 
+for Stress Testing
+by the pair of 
+equations:
+Equation D
+6
+
+CPI inflation
+(
+)
+=
+0
+.
+48
++
+(
+)
++
+(
+)
+,
+Equation D
+7
+
+CPI inflation wedge
+(
+)
+=
+0
+.
+11
+(
+1
+)
++
+(
+)
+.
+It is worth noting that the estimated value of the intercept is replaced in the simulation 
+with that implied by the long
+-
+range estimates of the CPI inflation and PCE inflation in the Blue 
+Chip Economic Indicators survey when constructing the baseline or si
+mulating the adversely 
+severe scenario. 
+The strategy is also employed to link GDP inflation to PCE inflation:
+28
+Equation D
+8
+
+GDP inflation
+(
+)
+=
+(
+)
++
+(
+)
+,
+Equation D9
+
+GDP inflation wedge
+(
+)
+=
+0
+.
+45
+(
+1
+)
++
+(t)
+.
+Tables 
+D1
+and 
+D2
+report statistics about core and headline PCE inflation for the non
+-
+pandemic recessions since the beginning of the 1980s.
+29
+The change in prices is analyzed and 
+reported in terms of four
+-
+quarter percent changes to smooth through the volatility of the quarterly 
+28
+The Board uses core PCE inflation to anchor GDP inflation as running the same regression with headline PCE 
+inflation as the chief driver reduces the fit of the equation as measured by a lower R
+2
+. 
+29
+The two recessions at the very beginning of the 80s are treated as one due to their proximity.
+29
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+changes.  The impact of the recession on inflation is characterized by comparisons of outcomes 
+in the six quarters preceding the recession (labelled Prior) versus outcomes in the eight 
+quarters corresponding to the last two quarters of the recession and 
+the subsequent six quarters 
+(labelled Post).
+30
+The first three columns of reported statistics report the highest inflation rate 
+prior to the recession, the smallest value over the post
+-
+recession periods
+,
+and the difference 
+between the two.  The second three columns of statistics report the prior and post
+-
+recession 
+medians, as well as the difference in medians.   
+While the totality of the results shows a wide range of values
+, which is 
+not necessarily 
+surprising given the volatile nature of inflation, especially headline inflation, the following 
+patterns can nonetheless be discerned.
+First, all measures of inflation show a negative change following a recession. 
+Second, as 
+expected, the changes calculated from the max/min approach are larger than those obtained from 
+using the median statistics. 
+The declines observed following the 1990s and 2000s recessions are 
+smaller than those observed during the 
+2007
+-
+2009 financial crisis
+, which reflects a very fast and 
+sharp decline in inflation at the end of 2008. 
+Table 
+D1
+
+Core PCE 
+i
+nflation
+Max/Min metric
+Median metric
+Recession
+Core PCE Inflation
+Core PCE Inflation
+Max
+Min
+Change
+Prior
+Post
+Change
+1980/1982
+9.68
+4.15
+-
+5.53
+9.18
+5.48
+-
+3.71
+1990/
+19
+91
+4.65
+2.89
+-
+1.76
+3.95
+3.41
+-
+0.54
+200
+1
+1.86
+1.43
+-
+0.43
+1.72
+1.68
+-
+0.04
+2007
+-
+2009 financial crisis
+2.61
+0.67
+-
+1.94
+2.41
+1.23
+-
+1.18
+Notes: The entries of the first, second, fourth and fifth columns refer to annualized 
+quarterly percentage change in inflation while the third and sixth columns show the 
+30
+The range of the post period is chosen to measure the effect on inflation once the full effects of the recessions 
+have been reflected in the inflation process. 
+As a result, the early quarters of the recessions were excluded from the 
+calculations.      
+30
+Model Documentation: 
+Prices: PCE, CPI and GDP deflators
+difference between the values reported in the entries of the two columns that precede 
+them.
+Table 
+D2
+
+Headline
+PCE 
+i
+nflation
+Max/Min metric
+Median metric
+Recession
+Headline PCE Inflation
+Headline PCE Inflation
+Max
+Min
+Change
+Prior
+Post
+Change
+1980/1982
+11.07
+3.77
+-
+7.30
+10.63
+4.52
+-
+6.11
+1990/91
+4.82
+2.50
+-
+2.32
+4.20
+2.92
+-
+1.28
+200
+1
+2.56
+0.76
+-
+1.80
+2.49
+1.69
+-
+0.81
+2007
+-
+2009 financial crisis
+3.31
+-
+1.20
+-
+4.51
+2.35
+1.28
+-
+1.07
+Notes: See the notes of 
+T
+able 
+D1
+.
+31
+Model Documentation: 
+Nominal and Real Disposable Income
+E.
+Nominal and Real Disposable Income
+Modeling disposable income (DPI) from first principles would involve, from an 
+accounting perspective, multiple components such as wages, profits, transfers and average tax 
+rates.  These components would in turn depend on many other factors that are not dir
+ectly 
+relevant to the scenario design process and from which the model accordingly abstracts. 
+For 
+example, wages should depend on the capital stock through effects on labor productivity, but 
+neither the stock of capital nor the investment flows that gener
+ate it are variables directly 
+relevant to stress scenarios. 
+This additional complexity can be circumvented by focusing on the strong and readily 
+apparent relationship between disposable income and GDP.  This relationship is then modulated 
+by a proxy for the state of the business cycle (the unemployment rate, in thi
+s case), to capture 
+important features of the data such as the tendency of DPI/GDP ratio to rise in recessions, in part 
+due to higher transfer payments, as has been the case in recessions since the 1990s.  More 
+precisely, the dynamics of the nominal Dispos
+able Income process, 
+, is determined by the 
+equation
+:
+Equation E1
+
+Nominal disposable income
+(
+)
+(
+)
+(
+)
+(
+)
+=
+0
+.
+0058
+(
+(
+)
+(
+1
+)
+)
+.
+The equation was estimated with a sample starting in 1967 and ending in 2019. 
+This 
+specification characterizes the dynamics of 
+relative to those of nominal GDP (
+). 
+The 
+estimates confirm the countercyclical dynamics of DPI, where DPI is typically stronger than 
+GDP when the economy weakens, i.e. when 
+(
+)
+(
+1
+)
+is greater than 0, and somewhat 
+weaker than GDP when the economy is expanding, i.e.
+,
+when 
+(
+)
+(
+1
+)
+<
+0
+. 
+32
+Model Documentation: 
+Nominal and Real Disposable Income
+Figure E1
+shows the evolution of nominal and real DPI over the 2007
+-
+2009 financial 
+crisis.
+31
+Figure E2
+shows the outcomes of the simulation based on the equation in the 
+Macro 
+Model for Stress Testing 
+replication of the 2025 adverse stress scenario.  The equation roughly 
+captures the fact that real DPI hovers near its level at the time the recessionary event started 
+while nominal DPI keeps growing through the period.  Real disposable income is construct
+ed by 
+deflating its nominal counterpart with the headline PCE price level.
+32
+Figure E1
+
+Disposable personal income (historical data)
+31
+The level of each series is normalized by dividing the series by the level of DPI either in 2007Q4 (when showing 
+the Great Recession period) or in the quarter before the simulation begins.
+32
+DPI is most often used as an indicator of household spending power and deflating nominal DPI by the 
+headline
+PCE price level is appropriate if the relevant concept of household spending is similar to consumption in the 
+National Income and Product Accounts.
+33
+Model Documentation: 
+Nominal and Real Disposable Income
+Figure E2
+
+Disposable personal income (simulated data)
+34
+Model Documentation: 
+Monetary Policy (Fed Funds Rate) and the 3
+-
+month Treasury Bill Rate
+F.
+Monetary Policy (Fed Funds Rate) and the 3
+-
+month Treasury
+Bill Rate
+The Board assumes that the Fed Funds rate, 
+, follows the prescription of a policy 
+rule, 
+:
+Equation F1
+
+Monetary policy rule
+(
+)
+=
+0
+.
+85
+(
+1
+)
++
+0
+.
+15
++
+average 
+(
+(
+)
+,
+4
+)
++
+0
+.
+5
+average 
+(
+(
+)
+,
+4
+)
+(
+)
++
+0
+.
+15
+(
+(
+)
+<
+0
+)
+(
+)
+0
+.
+85
+(
+)
+(
+2
+)
+(
+(
+)
+>
+(
+)
+)
+(
+(
+)
+(
+2
+)
+>
+0
+)
+,
+Equation F2
+
+ELB 
+constraint
+(
+)
+=
+max
+(
+(
+)
+,
+0
+.
+125
+)
+.
+The effective lower bound (ELB) is imposed whenever the policy rate is below 0.125. 
+This assumption is consistent with the fact that the Board has never adopted a nominal policy 
+rate below zero, and the views of members of the FOMC, who have suggested that they would 
+apply a very high bar to conditions under which they would consider nomi
+nal policy rates below 
+zero.
+33
+The standard part of the rule is a function of the natural rate of interest, 
+, the 
+33
+See, e.g.
+,
+Bernanke, Ben (2016). What Tools Does the Fed Have Left? Part 1.  Negative Interest Rates. 
+Brookings Institution, March 18;
+Fischer, Stanley
+(2016). Monetary Policy, Financial Stability, and the Zero Lower 
+Bound.
+Speech by Stanley Fischer
+Vice Chairm
+an Board of Governors of the Federal Reserve System at the 
+Annual Meeting of the American Economic Association, San Francisco, California;
+and
+interview
+Powell says the 
+Federal Reserve is not considering negative interest rates
+by Jeff Cox (CNBC)
+from Ma
+y 13, 2020, available online 
+at this link:
+Powell says the Federal Reserve is not looking at negative interest rates
+.
+35
+Model Documentation: 
+Monetary Policy (Fed Funds Rate) and the 3
+-
+month Treasury Bill Rate
+output gap, 
+, and core PCE inflation.
+34
+This rule is used in the paper Chung et al
+. (2019).
+35
+As in that paper, the Board adds an adjustment to the rule whenever the economy deteriorates 
+meaningfully.  This adjustment is a function of the changes over two quarters in the 
+unemployment rate. 
+The Board assumes that the path of the simulated Treasury 3
+-
+month bill 
+rate 
+matches that 
+of the Federal Funds rate:
+Equation F3
+
+3
+-
+month Treasury bill
+rate
+(
+)
+=
+(
+)
+.
+While in reality the two short
+-
+term interest rates deviate from each other because of 
+liquidity risks, monetary policy expectations
+,
+and market functioning, modeling these factors in a 
+simple and systematic way is quite challenging.  Moreover, with the scenario narratives requiring 
+a pronounced increase in unemployment and noticeable decrease in inflation, the policy rate 
+quickly falls
+to the ELB and remains there for a prolonged period.  Consequently, any difference 
+between the policy rate and other short
+-
+term interest rates would generally be very small and 
+immaterial to the outcomes of the simulation.  
+34
+The function 
+average 
+(
+,
+)
+indicates the average of variable 
+over the period defined by the current period and 
+the last 
+1
+periods.
+(
+.
+)
+is an indicator function that is equal to 1 if its statement argument is true, and 0 
+otherwise.
+35
+Hess T. Chung & Etienne Gagnon & Taisuke Nakata & Matthias Paustian & Bernd Schlusche & James Trevino & 
+Diego Vil
+á
+n & Wei Zheng
+.
+,
+2019. 
+
+Monetary Policy Options at the Effective Lower Bound : Assessing the Federal 
+Reserve's Current Policy Toolkit,
+ 
+Finance and Economics Discussion Series 2019
+-
+003, Board of Governors of the 
+Federal Reserve System (U.S.).
+36
+Model Documentation: 
+Long
+-
+term Interest Rates
+G.
+Long
+-
+term Interest Rates
+The 5
+-
+and 10
+-
+year Treasury yields (
+5
+and 
+10
+, respectively) are specified as the 
+sum of expected policy rates over the valuation horizon 
+(
+5
+/
+10
+)
+and a term premium 
+(
+5
+/
+10
+)
+.  S
+ee Cohen et al (2018) and 
+Gürkaynak and Wright (2012)
+.  The 
+corresponding equations are:
+Equation G1
+
+5
+-
+year Treasury yield
+5
+(
+)
+=
+5
+(
+)
++
+5
+(
+)
+,
+Equation G2
+
+10
+-
+year Treasury yield
+10
+(
+)
+=
+10
+(
+)
++
+10
+(
+)
+.
+The expectational components are equal to the average of the quarterly short
+-
+term interest 
+rates over the horizon corresponding to the maturity of the bond:
+Equation G
+3
+
+5
+-
+year 
+e
+xpectational component
+5
+(
+)
+=
+(
+(
+)
++
+(
++
+1
+)
++
+.
+.
+.
++
+(
++
+19
+)
+)
+20
+Equation 
+G
+4
+
+10
+-
+year 
+e
+xpectational component
+10
+(
+)
+=
+(
+(
+)
++
+(
++
+1
+)
++
+.
+.
+.
++
+(
++
+39
+)
+)
+40
+(
++
+)
+denotes the estimated federal funds rate in quarter 
+of the scenario horizon.
+37
+Model Documentation: 
+Term Premiums
+H.
+Term Premiums
+Term premiums play an important role in the generation of long
+-
+term yields, both in the 
+baseline and in scenarios. 
+The guidance on long
+-
+term yields only provides information about 
+the 
+trajectory
+over 
+the early quarters of the simulation but no information regarding how the yields 
+go back to their long
+-
+run values and what those values are.  
+Accordingly, b
+eyond the horizon of 
+the guidance, the path of longer
+-
+term yields is determined
+, unless otherwise specified,
+endogenously in the model, through the paths o
+f the term premiums and the expected federal 
+funds rate implied by the scenario, consistent with the model equations for those variables.
+Consequently, the main function of the term premium equations is to characterize their
+convergence towards their respective 
+long
+-
+run value, or 
+unconditional means
+,
+beyond
+the point 
+determined by the guides
+. 
+While
+many
+factors
+influence term premiums
+, 
+including
+market 
+assessments of current and future expected economic conditions, supply
+-
+demand imbalances and 
+institutional factors, 
+the Board considers a simple autoregressive process of order 1, i.e., an 
+AR(1) process, as an adequate specification to fulfill
+this function.
+Any cyclical co
+-
+movement 
+between term premiums and broader economic conditions is assumed to be incorporated in the 
+guidance.
+Determining the parameters in the specification is complicated by an 
+apparent downward 
+trend in the earlier decades of the sample
+in many influential term premium estimates, as 
+illustrated in
+Figure H1
+, which presents
+estimates of the term premiums 
+obtained by
+Kim and
+Wright using the methodology of Kim and Orphanides.
+36
+The nature of this downward 
+movement has important implications for both the appropriate long
+-
+run level and the degree of 
+36
+Kim, D
+.
+H. 
+&
+Wright, J
+.
+H.
+, 
+2005.
+
+An Arbitrage
+-
+Free Three
+-
+Factor Term Structure Model and the Recent 
+Behavior of Long
+-
+Term Yields and Distant
+-
+Horizon Forward Rates
+,
+FEDS Working Paper No. 2005
+-
+33
+; 
+Kim
+, 
+D
+.
+H. 
+&
+Orphanides,
+A
+.
+, 
+2012.
+Term Structure Estimation with Survey Data on Interest Rate Forecasts, Journal of 
+Financial and Quantitative Analysis, 47 (February 2012): 241
+-
+272
+38
+Model Documentation: 
+Term Premiums
+persistence in the process. 
+If the process is assumed to be stationary, i.e., deviations from a time
+-
+invariant long
+-
+run level are assumed to temporary, then, given these estimates, deviations must 
+be very persistent and the long
+-
+run level significantly higher than the realized path o
+ver the last 
+several decades.  On the other hand, if the process is taken to display permanent shifts in the 
+long
+-
+run level, the long
+-
+run level in the model should be calibrated to values more like recent 
+realizations, while de
+viations from that time
+-
+varying long
+-
+run level might be relatively transient.
+In what follows, we investigate the implications of different assumptions about the 
+apparent downward trend in term premiums.  For this purpose, the Board focuses on estimates 
+from the Kim
+-
+Wright model previously presented.  While this focus on the Kim
+-
+Wri
+ght model is 
+not without loss of generality, the Kim
+-
+Wright estimates are produced by the Board and are thus 
+one of the few public sources that can be assured to be reliably and consistently produced 
+indefinitely into the future.
+37
+The Board considers two ways to deal 
+with th
+e
+downward drift 
+shown in the Kim and 
+Wright estimates.  The first approach is
+to estimate time
+-
+var
+ying
+intercept
+s (
+,
+and
+,
+) for the AR(1) specifications: 
+37
+It is known that the magnitude of the secular decline shown by the Kim and Wright estimates depends in part on 
+the treatment of the end
+-
+points of the variables in the estimation of the term structure model, more specifically, 
+whether these end
+-
+points are c
+onsidered to be constant or to vary over time. 
+While using survey forecasts to 
+discipline the dynamics parameters of the term structure model, Kim and Wright still assume a system with 
+a time
+-
+invariant long
+-
+run level
+.  An alternative assumption is for the variables end
+-
+points to vary over time, as proposed in 
+Bauer and Rudenbusch (2018) and Crump et all (201
+6
+). 
+(
+Bauer, M. D., and Rudebusch, G. D., 2020. Interest Rates 
+under Falling Stars. American Economic Review 110 (5): 1316
+
+54
+; and 
+Crump R. K. & Eusepi S. & Moench E., 
+2016. The term structure of expectations and bond yields, Staff Reports 775, Federal Reserve Bank of New York.
+)
+Both papers argue that such 
+a 
+specification provides estimates of the term premiums that better reflects 
+changing 
+risks associated with Treasury securities. 
+An alternative source for publicly available term
+-
+premium estimates would be the estimates of 
+Adrian, Crump, and 
+Moench
+(2018), made available by the Federal Reserve Bank of New York at 
+https://www.newyorkfed.org/research/data_indicators/term
+-
+premia
+-
+tabs#/overview
+and based on  
+Adrian T. & 
+Crump R. K., Moench E.
+, 
+2013. "Pricing the term structure with linear regressions", Journal of Financial 
+Economics, Volume 110, Issue 1, p. 110
+-
+138.
+As with Kim
+-
+Wright, this model assumes a time
+-
+invariant long
+-
+run 
+level.
+39
+Model Documentation: 
+Term Premiums
+Equation H1
+
+10
+-
+year 
+term premium
+(time
+-
+varying intercept)
+10
+(
+)
+=
+,
++
+10
+(
+1
+)
+,
++
+(
+)
+Equation H
+2
+
+5
+-
+year term premium
+(time
+-
+varying intercept)
+5
+(
+)
+=
+,
++
+5
+(
+1
+)
+,
++
+(
+)
+While formally inconsistent with the underlying Kim
+-
+Wright model, this approach could 
+be viewed as a way of separating out highly persistent movements in the term
+-
+premium from the 
+comparatively transient movements that are more relevant to scenario design 
+over the horizon of 
+a few years.
+Estimating this model by maximizing the likelihood yields estimates of 
+and 
+for the 1990
+-
+2024 sample of 0.81 and 0.74 respectively.
+38
+By design, this approach 
+attributes a significant fraction of the variation in the term premiums to the intercepts, and hence 
+deviations from the time
+-
+varying long
+-
+run value are not very persistent.  
+An alternative approach is to estimate a model relying on a shorter sample (2000
+-
+2024), 
+over which the downward drift is not as marked. 
+This sample, while shorter, still spans t
+hree
+recessions 
+
+importantly including the 2007
+-
+2009 financial crisis. 
+The downward trend over that 
+smaller sample is far less apparent and largely absent since 2010.
+T
+he fact that the observations 
+in the early 2000s are within the range of the long
+-
+run values implied by the Blue Chip long
+-
+range forecasts since 2007 supports this view.
+39
+Under this alternative specification
+, the 
+intercepts of the 
+term premiums are 
+now time
+-
+invariant
+:
+38
+For the purposes of this estimation exercise, the intercepts are assumed to be independent random walks.
+39
+More precisely, the difference between the far end long
+-
+range forecast of the 10
+-
+year Treasury yield and that of 
+the 3
+-
+month 
+Treasury B
+ill
+rate
+ranges has been in a range between 0.7 and 1.5    
+40
+Model Documentation: 
+Term Premiums
+Equation H
+3
+
+10
+-
+year term premium (constant intercept)
+10
+(
+)
+=
++
+(
+10
+(
+1
+)
+)
++
+(
+)
+Equation H
+4
+
+5
+-
+year term premium (constant intercept)
+5
+(
+)
+=
++
+5
+(
+1
+)
++
+(
+)
+The ordinary least square estimates of 
+and 
+(0.91 and 0.87, respectively) 
+now show considerably more persistence.
+40
+The difference in the estimated degree of persistence across the two specifications entails 
+noticeable differences in the speed with which premiums will converge back to their long
+-
+run 
+values.  For example, for the 10
+-
+year premium, the relatively rapid con
+vergence under the time
+-
+varying intercept specification entails that the number of periods
+it takes for the effect of an 
+initial shock (or innovation) to dec
+line
+to 
+10 percent
+of its initial magnitude
+is about 11 quarters, 
+compared to 24 quarters assuming 
+a constant intercept. 
+Inspection of Figure H1 suggests that 
+movements in the Kim
+-
+Wright term premiums during recessions are likely more consistent with 
+that implied by the estimate of the time
+-
+varying specification. 
+The Board therefore adopts the 
+estimates of the time
+-
+varying specification for the degree of persistence coefficient of the 5
+-
+and 
+10
+-
+year term premium equations.
+In principle, each approach has different implications for setting the long
+-
+run value of the 
+term premiums. 
+However, instead of relying heavily on model
+-
+based estimates, the Board will 
+rely on survey information about expectations regarding the 10
+-
+year Treasury term premium  
+from the Blue Chip long
+-
+range economic forecasts, which should incorporate a more 
+40
+This higher degree of persistence compared to the model with a time
+-
+varying long
+-
+run value is to be expected: 
+that model could explain most highly persistent movements in the term premium through changes in the long
+-
+run 
+value, leaving the autoregressive pr
+ocess to explain only transient movements, while the present model must explain 
+everything with only the autoregressive process.
+41
+Model Documentation: 
+Term Premiums
+comprehensive information set than any given econometric model that we might estimate. 
+Accordingly, the unconditional mean of the 
+10
+-
+year 
+term premium process 
+used 
+in the generation 
+of the baseline and scenarios 
+is calculated 
+as the difference between the long
+-
+range forecast of 
+the 10
+-
+year Treasury yield and that of the 3
+-
+month Treasury
+bill
+rate
+.
+Since there is no 
+corresponding long
+-
+range forecast of the 5
+-
+year Treasury yield, the unconditional mean of its 
+term premium is calibrated as the difference bet
+ween that of the 10
+-
+year term premium and 20 
+basis points. 
+Appendix B provides the motivation and calculation behind the size of this 
+adjustment. 
+It should be noted that this determination of the long
+-
+run values of the term 
+premiums is consistent with and further affirm
+s
+the choice of the time
+-
+varying intercept 
+specification. 
+Figure H1
+
+5
+-
+and 10
+-
+year Treasury term premiums
+42
+Model Documentation: 
+Model Variables with Complete and Explicit Guides
+I.
+Model Variables with Complete and Explicit Guides
+With the exception of the unemployment rate, all the equations and variables discussed 
+until now refer to variables for which that variables equation in the model governs its behavior 
+in scenarios. 
+For the remaining variables, while the behavior of these variables is determined by 
+their respective guides up to 13 quarters, the following equations generate baseline projection
+s
+whenever outside forecasts are not available and are needed to produce a projection beyond the 
+13
+-
+quarter horizon of the guides.  T
+hese variables are the BBB Spread, house price, equity price, 
+VIX, mortgage rate, commercial real estate price and prime rate.
+41
+i.
+BBB Spread
+The equation of the BBB yield is given by:
+Equation 
+I1
+
+BBB yield
+(
+)
+=
+(
+)
++
+10
+(
+)
+.
+The process for the BBB spread is assumed 
+to 
+follow an AR(1) process. 
+The estimated 
+equation is:  
+Equation 
+I2
+
+BBB spread
+(
+)
+=
+1
+.
+66
++
+0
+.
+87
+(
+(
+1
+)
+1
+.
+66
+)
++
+(
+)
+This equation is estimated with a sample starting in 1990 and ending in 2019. 
+Figure I1
+shows the BBB term premium series and the estimated unconditional mean of its equation.
+41
+The reader is referred to the corresponding guide of these variables for more information about them.
+43
+Model Documentation: 
+Model Variables with Complete and Explicit Guides
+Figure I1
+
+BBB spread
+ii.
+House Price
+Following the convention adopted by the HPI guidance, the dynamics of the house prices 
+are characterized through those of its ratio relative to per capita disposable income, that is:
+Equation I3
+
+Ratio of h
+ouse price
+index
+to
+per capita disposable income
+(d
+efinition
+)
+(
+)
+=
+(
+)
+(
+)
+(
+)
+.
+As for the unemployment rate, the structure of an AR(2) process is adopted to 
+characterize the dynamics of the 
+series. 
+The identification of the unconditional mean of 
+the series proceeds as follows.  As seen in
+Figure I2
+, the rise in house prices observed prior to the 
+2007
+-
+2009 financial crisis
+represents an unprecedented episode.  As such, not including the most 
+extreme observations in the calculation of a historical unconditional mean is the preferred option.  
+The strategy of dropping any ob
+servation larger than the maximum value recorded by the series 
+44
+Model Documentation: 
+Model Variables with Complete and Explicit Guides
+outside the window surrounding the 2007
+-
+2009 financial crisis is adopted
+.
+42
+The mean of the 
+series over the sample period, excluding the aforementioned observations, is 0.003064.  Taking 
+this average as given, the AR(2) process for the 
+series is estimated:
+Equation 
+I4
+
+Ratio of house price index to per capita disposable income
+(e
+quation
+)
+(
+)
+=
+0
+.
+003
++
+1
+.
+66
+(
+(
+1
+)
+0
+.
+003
+)
+0
+.
+68
+(
+(
+2
+)
+0
+.
+003
+)
++
+(
+)
+.
+Figure 
+I2
+
+PRATIO and equations unconditional mean
+iii.
+Equity Price 
+The equity price index, 
+, is assumed in the baseline to grow with the rest of the 
+economy:
+42
+The largest value is 0.003480, recorded in 1979Q4. 
+45
+Model Documentation: 
+Model Variables with Complete and Explicit Guides
+Equation 
+I5
+
+Equity price
+(
+)
+(
+)
+=
+(
+)
+(
+)
++
+(
+)
+.
+However, this specification does not provide any mechanism for the stock market series 
+to recover or return towards its baseline value after the large fall assumed by the Equity Price 
+guide, beyond the specified end value at the 13
+-
+quarter mark.  In order to ensure that the stock 
+market relative to nominal GDP eventually returns (well beyond 13 quarters) to the original 
+baseline ratio, 
+, the equation used for the simulation of a severe stress scenario is:  
+Equation 
+I6
+
+Scenario a
+d
+justed
+equity price 
+equation
+(
+)
+(
+)
+=
+(
+)
+(
+)
+0
+.
+1
+(
+)
+(
+)
+(
+)
+.
+iv.
+VIX
+The 
+VIX 
+equation is estimated from 1990Q1 to 2009. 
+It relates the dynamics of the 
+VIX 
+to that of the BBB yield series (
+)
+:
+Equation 
+I7
+
+VIX
+(
+)
+=
+9
+.
+3
++
+9
+.
+9
+(
+(
+)
+10
+(
+)
+)
++
+0
+.
+42
+(
+1
+)
+9
+.
+3
+9
+.
+9
+(
+1
+)
+10
+(
+1
+)
+.
+As an example, the long
+-
+run value of the
+VIX 
+according to this equation is about 25.7 
+when the long
+-
+run value of the BBB premium is 1.66. 
+v.
+Mortgage Rate 
+The residential mortgage rate is specified as a premium term, 
+, over the 10
+-
+year 
+Treasury yield:
+Equation 
+I8
+
+Residential mortgage rate
+(
+)
+=
+10
+(
+)
++
+(
+)
+46
+Model Documentation: 
+Model Variables with Complete and Explicit Guides
+The residential mortgage term premium is assumed to follow an AR(1) process
+,
+and its 
+equation is estimated over the sample from 1990 to 2019
+:
+Equation 
+I9 
+
+Residential Mortgage Spread
+(
+)
+=
+1
+.
+53
++
+0
+.
+85
+(
+(
+1
+)
+1
+.
+53
+)
+.
+Figure I3
+
+Residential 
+m
+ortgage 
+s
+pread
+vi.
+Commercial Real Estate Price
+Our specification of the commercial real estate price, CRE, is similar to that of the stock 
+market, where the variable is tied to the evolution of the nominal GDP:
+Equation 
+I
+10
+
+Commercial 
+r
+eal 
+e
+state 
+p
+rice
+(
+)
+(
+)
+=
+(
+)
+(
+)
+.
+And, as assumed for the stock market variable, the eventual return (well beyond the 
+initial 13 quarters, the path of which is provided by the Commercial Real Estate Price guide) to 
+47
+Model Documentation: 
+Model Variables with Complete and Explicit Guides
+the baseline is compelled by adopting the following specification when simulating stress 
+scenarios:
+Equation
+I1
+1
+
+Scenario adjusted
+commercial real estate price
+(
+)
+(
+)
+=
+(
+)
+(
+)
+0
+.
+025
+(
+)
+(
+)
+(
+)
+.
+vii.
+Prime Rate
+The equation of the prime rate reflects the fact that it is usually set about 
+three
+percent 
+higher
+than the federal funds rate:
+Equation 
+I1
+2
+
+Prime rate
+(
+)
+=
+(
+)
++
+3
+.
+Figure I4
+confirms that close relationship. 
+Figure I4
+
+Federal funds rate and prime rate
+48
+Model Documentation: 
+The Identities of the Macro Model for Stress Testing
+J.
+The 
+I
+dentities of the 
+Macro Model
+for Stress Testing
+The following equations are identities and definitions in the 
+Macro Model
+for Stress Testing
+: 
+(
+)
+=
+(
+1
+)
+(
+)
+(
+)
+=
+(
+1
+)
+(
+)
+(
+)
+=
+(
+1
+)
+(
+)
+(
+)
+=
+(
+1
+)
+(
+)
+(
+)
+=
+100
+log
+(
+)
+(
+)
+(
+)
+=
+(
+)
+(
+)
+0
+.
+01
+(
+)
+=
+(
+)
+(
+)
+0
+.
+01
+49
+Model Documentation: 
+Exogenous Variables
+K.
+Exogenous Variables
+The equations of the model outlined so far depend on exogenous variables, i.e.
+,
+variables 
+that do
+not
+have equations but instead are treated as fixed and whose values are set based on 
+public information.  The exogenous variables are population (
+16
+), the natural rate of 
+unemployment (
+), potential output and its growth rate (
+and 
+), the long
+-
+run inflation expectations (
+), the policy objective for inflation (
+), the natural rate of 
+interest rate (
+). 
+Table K1
+shows either the source of information or values used to set the path of these 
+exogenous variables.  The Board assumes that long
+-
+run inflation expectations remain anchored at 
+the FOMCs 
+longer
+-
+run goal 
+of 2 percent.
+43
+Table 
+K1
+
+Data sources of exogenous variables
+Exogenous Variables
+Variables
+Mnemonics
+Sources
+Population
+16
+CBO
+Natural Rate of 
+Unemployment
+CBO
+Potential GDP
+CBO
+Long
+-
+Run Inflation 
+Expectations
+2
+Policy Objective
+2
+Natural Rate of Interest
+BC
+Notes: CBO refers to the Historical Data and Economic Projections 
+release from the Congressional Budget Office; BC refers to the long
+-
+range forecasts published in the Blue Chip Economic Indicators survey 
+in March and October of each year. 
+43
+See FOMC longer
+-
+run goal at 
+https://www.federalreserve.gov/monetarypolicy/files/fomc_longerrungoals.pdf
+. 
+50
+Model Documentation: 
+Exogenous Variables
+The CBO is an authoritative federal legislative agency that provides on a regular and 
+consistent basis nonpartisan economic estimates and forecasts.  In particular, 
+the CBOs
+estimates include economic statistical concepts that do
+not
+have observations in the data releases 
+from government statistical agencies, such as potential GDP and the natural rate of 
+unemployment.
+51
+Model Documentation: 
+List of variables and mnemonics
+L.
+List of variables and mnemonics
+: Commercial 
+R
+eal 
+E
+state 
+P
+rice
+: Real DGP
+: Nominal GDP
+: Potential GDP
+16
+: Population
+: Headline PCE 
+D
+eflator (
+P
+rice
+level)
+: Core PCE 
+D
+eflator (
+P
+rice level)
+: GDP 
+D
+eflator (
+P
+rice
+level)
+: House 
+P
+rice
+Index
+: Headline PCE 
+I
+nflation (
+L
+ogarithmic definition of growth)
+: GDP Inflation (
+L
+ogarithmic definition of growth)
+: 
+Inflation
+Policy Objective
+: Core PCE Inflation (
+L
+ogarithmic definition of growth) 
+: Long
+-
+R
+un 
+I
+nflation 
+E
+xpectations
+: BBB Yield
+: BBB Spread
+: Federal Funds Rate
+: Policy 
+R
+ate
+5
+: 5
+-
+year Treasury 
+Y
+ield
+5
+: 5
+-
+year Treasury Yield Term Premium 
+10
+: 10
+-
+year Treasury 
+Y
+ield
+10
+: 10
+-
+year Treasury Yield Term Premium
+52
+Model Documentation: 
+List of variables and mnemonics
+: 
+Residential
+Mortgage Rate
+: Natural 
+R
+ate of 
+I
+nterest
+: 3
+-
+month Treasury Bill
+Rate
+: Unemployment Rate
+: Natural Rate of Unemployment
+: VIX Index
+XGAP: Output Gap
+: Nominal Disposable Income
+: Real Disposable Income
+5
+: 5
+-
+year Yield Expectational Component
+10
+: 10
+-
+year Yield Expectational Component
+53
+Model Documentation: 
+Appendix A.  Level vs Growth Okuns Law specification
+Appendix A.  Level vs Growth Okuns Law specification 
+Figure A
+A
+1 reports the results of dynamic simulations for a specification of Okuns Law 
+in levels over the (non
+-
+pandemic) recessions since 1990.  These results should be compared to 
+results for the growth rate specification shown in 
+F
+igure 
+C2
+from the main text. 
+The 
+performance of the equations is shown for a series of coefficients ranging from 1.0 to 1.5. 
+The 
+bottom panels of 
+F
+igure 
+A
+A1 and 
+C2
+show that, while the growth rule with a coefficient of 1.4  
+does well at capturing both the magnitude of the dec
+line in GDP and the contour of growth 
+during the
+2007
+-
+2009 financial crisis, there is no level rule that comes close to simultaneously 
+replicating these two aspects of GDP. 
+Given the ability of the growth specification to capture 
+both the depth and contour of the evolution of real GDP during the 2007
+-
+2009 financial crisis, it 
+has been adopted for the 
+Macro 
+M
+odel for Stress Testing
+.
+54
+Model Documentation: 
+Appendix A.  Level vs Growth Okuns Law specification
+Figure 
+AA
+1
+
+GDP level 
+d
+ynamic 
+c
+ounterfactuals
+55
+Model Documentation: 
+Appendix B. Calibration of the long
+-
+range value of the 5
+-
+year Treasury yield
+Appendix B. Calibration of the long
+-
+range value of the 5
+-
+year Treasury yield 
+While the long
+-
+range forecasts from the Blue Chip Economic Indicators survey provide 
+enough information to identify the long
+-
+run value of the 10
+-
+year Treasury yield and its term 
+premium, there is no corresponding information about the 5
+-
+year Treasury yield
+. 
+A simple 
+average over history of the difference between the 10
+-
+year and 5
+-
+year yields would not provide 
+an adequate estimate of the end value of the 5
+-
+year Treasury yield
+,
+as that difference tends to 
+fluctuate in a systematic manner over different phases of the business cycles, as shown in Figure 
+A
+B1. 
+The objective is to calibrate a long
+-
+run value that conceptually corresponds to an economy 
+that has settled to its long
+-
+run trends. 
+Of course, such 
+a 
+state is ever
+-
+vanishing and more 
+hypothetical than actual
+. 
+The 
+B
+oard assumes that the estimates that would best approximate 
+such economic conditions correspond to the difference between the long
+-
+run rates in the late and 
+mature phase of an economic expansion. 
+Figure 
+A
+B1 shows that during these periods the 
+difference between the two interest rates is at its lowest.
+44
+An average over the late phases of the 
+four expansions that precede the pandemic is about 20 basis points, which is the value used to 
+calibrate the end
+-
+value wedge between the 10
+-
+year and 5
+-
+year yields
+
+which is entirely captured 
+by the difference in the un
+conditional means of their respective term premiums.  
+44
+The Board identifies the period of late expansion as that ending 2 quarters before the first official quarter of a 
+recession and going back 2 years back from that final quarter.
+56
+Model Documentation: 
+Appendix B. Calibration of the long
+-
+range value of the 5
+-
+year Treasury yield
+Figure 
+A
+B1
+.
+Difference between the 10
+-
+year and 5
+-
+year Treasury yields
